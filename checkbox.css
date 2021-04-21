@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#boxDos {
+    background-color: rgb(245, 245, 245);
+    width: 10em;
+    height: 5em;
+    border-radius: 5em;
+    position: absolute;
+}
+
+#box {
+    display: none;
+}
+
+#box:checked ~ #fondo {
+    background-color: rgb(51, 51, 51);
+}
+
+#box:checked ~ #boxDos::after {
+    left: 5em;
+    box-shadow: -.5em 0em .2em .1em grey;
+}
+
+#boxDos::after {
+    content: "";
+    display: flex;
+    position: relative;
+    width: 5em;
+    height: 5em;
+    left: 0em;
+    background-color: white;
+    border-radius: 5em;
+    box-shadow: .5em 0em .2em .1em grey;
+    transition: .5s linear;
+}
+
+#fondo {
+    background-color: rgba(199, 255, 199, 0);
+    width: 100%;
+    height: 100vh;
+    transition: .5s ease-in-out;
+}
